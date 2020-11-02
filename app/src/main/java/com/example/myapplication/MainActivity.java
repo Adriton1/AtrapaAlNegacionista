@@ -9,23 +9,33 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    View menuPrincipal=findViewById(R.id.activity_main);
     Button botonJugar,botonOpciones,botonSalir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        botonSalir=(Button) findViewById(R.id.BotonSalir);
-    }
-    private void FuncionTestSalir(){ //BORRAR EN EL FUTURO
+        botonSalir=(Button) findViewById(R.id.button3);
         botonSalir.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                System.exit(0);
+                CerrarApp(v);
             }
         });
+        botonJugar=(Button) findViewById(R.id.button);
+        botonJugar.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Ejemplo(v);
+            }
+        });
+    }
+    public void CerrarApp(View view) {
+        MainActivity.this.finish();
+        System.exit(0);
+    }
+    public void Ejemplo(View view) {
+
     }
 }
 

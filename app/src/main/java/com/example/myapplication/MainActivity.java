@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private void FuncionTestSalir(View view){ //BORRAR EN EL FUTURO
         botonSalir.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 finish();
                 System.exit(0);
             }

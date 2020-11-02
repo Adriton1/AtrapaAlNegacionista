@@ -32,7 +32,7 @@
             android:text="Opciones"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="50sp"
+            android:textSize="43sp"
             android:visibility="visible"
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal" />
@@ -45,7 +45,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginTop="50dp"
                 android:text="Brillo: "
                 android:textColor="@color/white"
@@ -62,7 +62,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginTop="40dp"
                 android:text="Volumen de la música: "
                 android:textColor="@color/white"
@@ -76,20 +76,19 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"/>
 
-            <Button
-                android:layout_width="123dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="100dp"
-                android:backgroundTint="#06880C"
-                android:fontFamily="serif"
-                android:text="Guardar"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold">
-            </Button>
-
         </LinearLayout>
+        <Button
+            android:layout_width="123dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:backgroundTint="#06880C"
+            android:fontFamily="serif"
+            android:text="Guardar"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold">
+        </Button>
 
     </LinearLayout>
 </LinearLayout>

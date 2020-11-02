@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    View menuPrincipal=findViewById(R.id.activity_main);
+    
     Button botonJugar,botonOpciones,botonSalir;
 
     @Override

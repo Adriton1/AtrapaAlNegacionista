@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.menuinicio);
         botonSalir=(Button) findViewById(R.id.BotonSalir);
     }
     private void FuncionTestSalir(){ //BORRAR EN EL FUTURO
@@ -27,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.BotonSalir:
+                finish();
+                break;
+        }
+    }
+
+
 }
 
 

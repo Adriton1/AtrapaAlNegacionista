@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,8 +18,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menuinicio);
         botonSalir=(Button) findViewById(R.id.BotonSalir);
+        botonOpciones=(Button) findViewById(R.id.BotonOpciones);
+        botonJugar=(Button) findViewById(R.id.BotonJugar);
     }
-    private void FuncionTestSalir(View view){ //BORRAR EN EL FUTURO
+    public void FuncionMenuOpciones(View view){
+        botonOpciones.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,OpcionesAct.class));
+            }
+        });
+    }
+    public void FuncionTestSalir(View view){ //BORRAR EN EL FUTURO
         botonSalir.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

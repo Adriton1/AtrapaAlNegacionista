@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.menuinicio);
         botonSalir=(Button) findViewById(R.id.BotonSalir);
     }
-    private void FuncionTestSalir(){ //BORRAR EN EL FUTURO
+    private void FuncionTestSalir(View view){ //BORRAR EN EL FUTURO
         botonSalir.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,14 +27,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.BotonSalir:
-                finish();
-                break;
-        }
-    }
-
 
 }
 

@@ -11,4 +11,5 @@ public class OpcionesAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menuopciones);
     }
+
 }

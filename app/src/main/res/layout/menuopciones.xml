@@ -72,22 +72,21 @@
                 android:id="@+id/seekBar2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp" />
 
             <Button
                 android:layout_width="123dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="40dp"
                 android:backgroundTint="#06880C"
                 android:fontFamily="serif"
                 android:text="Guardar"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold">
-            </Button>
+                android:textStyle="bold"></Button>
 
         </LinearLayout>
 

@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,28 +15,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        botonSalir=(Button) findViewById(R.id.button3);
+        setContentView(R.layout.menuinicio);
+        botonSalir=(Button) findViewById(R.id.BotonSalir);
+        botonJugar=(Button) findViewById(R.id.BotonJugar);
+        botonOpciones=(Button) findViewById(R.id.BotonOpciones);
+    }
+    public void FuncionMenuOpciones(View view){
+        botonOpciones.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,OpcionesAct.class));
+            }
+        });
+    }
+    public void FuncionTestSalir(View view){ //BORRAR EN EL FUTURO
         botonSalir.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                CerrarApp(v);
+                finish();
+                System.exit(0);
             }
         });
-        botonJugar=(Button) findViewById(R.id.button);
-        botonJugar.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Ejemplo(v);
-            }
-        });
-    }
-    public void CerrarApp(View view) {
-        MainActivity.this.finish();
-        System.exit(0);
-    }
-    public void Ejemplo(View view) {
-
     }
 }
 

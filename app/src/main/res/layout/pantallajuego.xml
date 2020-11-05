@@ -4,15 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/cuentaAtras"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:gravity="center_horizontal"
         android:textAlignment="center"
-        android:textSize="23dp"
-        android:gravity="center_horizontal" />
+        android:textColor="#FF5722"
+        android:textSize="23dp" />
 
     <ImageView
         android:id="@+id/imag11"

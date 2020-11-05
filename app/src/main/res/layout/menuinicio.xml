@@ -30,6 +30,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="50sp"
+            android:textStyle="bold"
             android:visibility="visible" />
 
         <Button

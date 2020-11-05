@@ -20,6 +20,7 @@ public class MainJuego extends AppCompatActivity {
         cuentaatras();
     }
     public void aleatorio(){
+        //Código temporal. Inicializamos todas la imágenes
         ImageView imagen11 =  findViewById(R.id.imag11);    //Infectado posicion 1
         ImageView imagen12 =  findViewById(R.id.imag12);    //Mascarilla bien puesta posicion 1
         ImageView imagen21 =  findViewById(R.id.imag21);    //Infectado posicion 2
@@ -87,6 +88,7 @@ public class MainJuego extends AppCompatActivity {
         }
     }
     public void cuentaatras() {
+        //Se trata de un contador simple si se termina el tiempo se acaba el juego
         contador = findViewById(R.id.cuentaAtras);
         final long duracionTotal= 20 * 1000; //milisegundos
         final long tiempoEntreTicks= 1000; //un segundo

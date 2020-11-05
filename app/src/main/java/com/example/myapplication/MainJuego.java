@@ -2,9 +2,11 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +22,7 @@ public class MainJuego extends AppCompatActivity {
         cuentaatras();
     }
     public void aleatorio(){
+        //Código temporal. Inicializamos todas la imágenes
         ImageView imagen11 =  findViewById(R.id.imag11);    //Infectado posicion 1
         ImageView imagen12 =  findViewById(R.id.imag12);    //Mascarilla bien puesta posicion 1
         ImageView imagen21 =  findViewById(R.id.imag21);    //Infectado posicion 2
@@ -61,11 +64,11 @@ public class MainJuego extends AppCompatActivity {
     }
     public void onClick(View view){
 
-        switch (view.getId()){
+        switch (view.getId()){   //cambia al pesonaje en la casilla marcada
             case R.id.imag11:
                 ImageView imagen11 = (ImageView) findViewById(R.id.imag11);
-                imagen11.setImageResource(R.drawable.e);
-                contador.setText("Has encontrado al negacionista!!");
+                imagen11.setImageResource(R.drawable.e);    //cambia la imagen con la de la mascarilla
+                contador.setText("Has encontrado al negacionista!!");   //Escribe en contador
                 break;
             case R.id.imag21:
                 ImageView imagen21 = (ImageView) findViewById(R.id.imag21);
@@ -85,8 +88,22 @@ public class MainJuego extends AppCompatActivity {
                 break;
 
         }
+
+
     }
+
+    public void FuncionIrOpcionesJuego(View view) {
+        ImageButton imageButton2 = (ImageButton) findViewById(R.id. imageButton2);
+        imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainJuego.this, MainActivity.class));
+            }
+        });
+    }
+
     public void cuentaatras() {
+        //Se trata de un contador simple si se termina el tiempo se acaba el juego
         contador = findViewById(R.id.cuentaAtras);
         final long duracionTotal= 20 * 1000; //milisegundos
         final long tiempoEntreTicks= 1000; //un segundo

@@ -7,14 +7,31 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <TextView
-        android:id="@+id/cuentaAtras"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:gravity="center_horizontal"
-        android:textAlignment="center"
-        android:textColor="#FF5722"
-        android:textSize="23dp" />
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="103dp"
+            android:layout_height="54dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/engranaje2"
+            android:onClick="FuncionIrOpcionesJuego"/>
+
+        <TextView
+            android:id="@+id/cuentaAtras"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textColor="#FF5722"
+            android:paddingTop="13dp"
+            android:textSize="23dp" />
+
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/imag11"
@@ -91,4 +108,6 @@
         android:onClick="onClick"
         android:visibility="invisible"
         app:srcCompat="@drawable/e" />
+
+
 </RelativeLayout>

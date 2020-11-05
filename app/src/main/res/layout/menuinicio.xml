@@ -26,10 +26,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="center_horizontal"
-            android:text="Titulo App"
+            android:text="Encuentra al negacionista"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="50sp"
+            android:textStyle="bold"
             android:visibility="visible" />
 
         <Button

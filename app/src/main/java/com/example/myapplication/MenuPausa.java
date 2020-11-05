@@ -21,7 +21,7 @@ public class MenuPausa extends AppCompatActivity {
         reanudar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //REANUDAR EL JUEGO
+                finish();
             }
         });
     }

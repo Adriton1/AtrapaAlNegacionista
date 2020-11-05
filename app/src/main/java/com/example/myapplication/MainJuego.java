@@ -69,22 +69,25 @@ public class MainJuego extends AppCompatActivity {
                 ImageView imagen11 = (ImageView) findViewById(R.id.imag11);
                 imagen11.setImageResource(R.drawable.e);    //cambia la imagen con la de la mascarilla
                 contador.setText("Has encontrado al negacionista!!");   //Escribe en contador
+                //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
                 break;
             case R.id.imag21:
                 ImageView imagen21 = (ImageView) findViewById(R.id.imag21);
                 imagen21.setImageResource(R.drawable.e);
                 contador.setText("Has encontrado al negacionista!!");
+                //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
                 break;
             case R.id.imag31:
                 ImageView imagen31 = (ImageView) findViewById(R.id.imag31);
                 imagen31.setImageResource(R.drawable.e);
                 contador.setText("Has encontrado al negacionista!!");
-
+                //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));;
                 break;
             case R.id.imag41:
                 ImageView imagen41 = (ImageView) findViewById(R.id.imag41);
                 imagen41.setImageResource(R.drawable.e);
                 contador.setText("Has encontrado al negacionista!!");
+                //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));;
                 break;
 
         }

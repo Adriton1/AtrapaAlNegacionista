@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@drawable/fondoopciones">
 
     <Button
@@ -18,7 +17,7 @@
         android:layout_marginBottom="100dp"
         android:background="@android:color/holo_blue_bright"
         android:text="SALIR DEL JUEGO"
-        android:onClick="FuncionTestSalir"
+        android:onClick="SalirDelJuego"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +36,7 @@
         android:layout_marginBottom="70dp"
         android:background="@android:color/holo_orange_dark"
         android:text="OPCIONES"
-        android:onClick="FuncionMenuOpciones"
+        android:onClick="CambiarAOpciones"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"

@@ -84,7 +84,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="60dp"
                 android:onClick="exitView"
-                android:text="Salir Menu" />
+                android:text="Salir al Menu" />
 
             <Button
                 android:layout_width="100dp"
@@ -96,7 +96,7 @@
                 android:fontFamily="serif"
                 android:text="Guardar"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"></Button>
+                android:textStyle="bold"/>
 
         </LinearLayout>
 

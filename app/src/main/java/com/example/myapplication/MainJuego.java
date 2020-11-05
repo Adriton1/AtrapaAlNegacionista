@@ -16,13 +16,10 @@ import java.util.Random;
 
 public class MainJuego extends AppCompatActivity {
     TextView contador;
-<<<<<<< HEAD
     boolean hasGanado=false;
-=======
     long tiempRest;
     int casoconcreto;
 
->>>>>>> MenuPP
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

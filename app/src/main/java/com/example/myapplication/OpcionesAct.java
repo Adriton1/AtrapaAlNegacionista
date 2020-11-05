@@ -10,10 +10,10 @@ public class OpcionesAct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menuopciones);
-<<<<<<< HEAD
+//<<<<<<< HEAD
         //prueba rama menupp
     }
-=======
+//=======
     }  
->>>>>>> develop
+//>>>>>>> develop
 }

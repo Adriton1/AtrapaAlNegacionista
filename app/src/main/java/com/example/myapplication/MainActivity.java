@@ -51,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void exitView (View view)
+
+    {
+        finish();
+    }
 
 }
 

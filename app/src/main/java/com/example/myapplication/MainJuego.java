@@ -15,6 +15,7 @@ import java.util.Random;
 
 public class MainJuego extends AppCompatActivity {
     TextView contador;
+    boolean hasGanado=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,30 +72,39 @@ public class MainJuego extends AppCompatActivity {
                 imagen11.setImageResource(R.drawable.e);    //cambia la imagen con la de la mascarilla
                 contador.setText("Has encontrado al negacionista!!");   //Escribe en contador
                 //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
+                hasGanado=true;
                 break;
             case R.id.imag21:
                 ImageView imagen21 = (ImageView) findViewById(R.id.imag21);
                 imagen21.setImageResource(R.drawable.e);
                 contador.setText("Has encontrado al negacionista!!");
                 //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
+                hasGanado=true;
                 break;
             case R.id.imag31:
                 ImageView imagen31 = (ImageView) findViewById(R.id.imag31);
                 imagen31.setImageResource(R.drawable.e);
                 contador.setText("Has encontrado al negacionista!!");
-                //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));;
+                //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
+                hasGanado=true;
                 break;
             case R.id.imag41:
                 ImageView imagen41 = (ImageView) findViewById(R.id.imag41);
                 imagen41.setImageResource(R.drawable.e);
                 contador.setText("Has encontrado al negacionista!!");
-                //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));;
+                //startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
+                hasGanado=true;
                 break;
 
         }
 
-
     }
+    //public void haGanado (boolean hasGanado) {
+        //if (hasGanado == false) {
+           // startActivity(new Intent(MainJuego.this, PantallaDerrota.class));
+       // }
+   // }
+
 
     public void FuncionIrOpcionesJuego(View view) {
         ImageButton imageButton2 = (ImageButton) findViewById(R.id. imageButton2);

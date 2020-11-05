@@ -11,18 +11,21 @@
         android:id="@+id/textView"
         android:layout_width="236dp"
         android:layout_height="44dp"
+        android:layout_marginTop="150dp"
         android:text="¡¡¡HAS GANADO!!!"
         android:textColor="@color/black"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="263dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="87dp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="269dp"
         android:layout_height="343dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/celebracion"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="338dp" />
+        tools:layout_editor_absoluteX="71dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

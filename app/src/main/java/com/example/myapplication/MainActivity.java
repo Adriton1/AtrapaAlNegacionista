@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         botonSalir.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                System.exit(0);
+                //Cierra la app
+                finishAffinity();
             }
         });
     }

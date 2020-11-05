@@ -42,6 +42,7 @@
             android:fontFamily="serif"
             android:text="Jugar"
             android:textAlignment="center"
+            android:onClick="FuncionEmpezarJuego"
             android:textColor="#FFFFFF"
             android:textStyle="bold">
 

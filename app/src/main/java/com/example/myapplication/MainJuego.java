@@ -62,11 +62,11 @@ public class MainJuego extends AppCompatActivity {
     }
     public void onClick(View view){
 
-        switch (view.getId()){
+        switch (view.getId()){   //cambia al pesonaje en la casilla marcada
             case R.id.imag11:
                 ImageView imagen11 = (ImageView) findViewById(R.id.imag11);
-                imagen11.setImageResource(R.drawable.e);
-                contador.setText("Has encontrado al negacionista!!");
+                imagen11.setImageResource(R.drawable.e);    //cambia la imagen con la de la mascarilla
+                contador.setText("Has encontrado al negacionista!!");   //Escribe en contador
                 break;
             case R.id.imag21:
                 ImageView imagen21 = (ImageView) findViewById(R.id.imag21);

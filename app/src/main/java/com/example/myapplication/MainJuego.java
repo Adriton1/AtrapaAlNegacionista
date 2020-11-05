@@ -2,9 +2,11 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -86,7 +88,20 @@ public class MainJuego extends AppCompatActivity {
                 break;
 
         }
+
+
     }
+
+    public void FuncionIrOpcionesJuego(View view) {
+        ImageButton imageButton2 = (ImageButton) findViewById(R.id. imageButton2);
+        imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainJuego.this, MainActivity.class));
+            }
+        });
+    }
+
     public void cuentaatras() {
         //Se trata de un contador simple si se termina el tiempo se acaba el juego
         contador = findViewById(R.id.cuentaAtras);

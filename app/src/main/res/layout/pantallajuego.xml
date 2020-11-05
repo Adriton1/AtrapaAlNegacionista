@@ -91,4 +91,13 @@
         android:onClick="onClick"
         android:visibility="invisible"
         app:srcCompat="@drawable/e" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="103dp"
+        android:layout_height="54dp"
+        android:background="@color/white"
+        app:srcCompat="@drawable/engranaje2"
+        android:onClick="FuncionIrOpcionesJuego"/>
+
 </RelativeLayout>

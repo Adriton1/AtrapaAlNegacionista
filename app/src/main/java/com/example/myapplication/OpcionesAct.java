@@ -16,4 +16,3 @@ public class OpcionesAct extends AppCompatActivity {
 //=======
     }  
 //>>>>>>> develop
-}

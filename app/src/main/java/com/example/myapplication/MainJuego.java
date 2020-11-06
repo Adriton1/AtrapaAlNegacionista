@@ -31,7 +31,7 @@ public class MainJuego extends AppCompatActivity {
             cuentaatras(tiempRest);
         }
         else {
-            aleatorio(0);
+            aleatorio(9);
             cuentaatras((long) 20);
         }
     }
@@ -106,7 +106,7 @@ public class MainJuego extends AppCompatActivity {
         ImageView imagen41 =  findViewById(R.id.imag41);    //Infectado posicion 4
         ImageView imagen42 =  findViewById(R.id.imag42);    //Mascarilla bien puesta posicion 4
         int num;
-        if(caso==0) {
+        if(caso==9) {
             Random random = new Random();
             num = random.nextInt(4);
         }
@@ -115,7 +115,7 @@ public class MainJuego extends AppCompatActivity {
         }
         casoconcreto=num;
 
-        switch (caso){
+        switch (num){
             case 0:
                 imagen11.setVisibility(View.VISIBLE);
                 imagen22.setVisibility(View.VISIBLE);

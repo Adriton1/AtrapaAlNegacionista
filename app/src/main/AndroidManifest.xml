@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".PantallaDerrota"></activity>
+        <activity android:name=".MySplashScreen">
+            android:theme="@style/SplashTheme"
+        </activity>
+        <activity android:name=".PantallaDerrota" />
         <activity android:name=".MenuPausa" />
         <activity android:name=".MainJuego" />
         <activity android:name=".OpcionesAct" />

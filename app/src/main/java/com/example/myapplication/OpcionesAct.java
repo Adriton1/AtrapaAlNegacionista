@@ -28,9 +28,9 @@ public class OpcionesAct extends AppCompatActivity {
         volverAlMenu=(Button) findViewById(R.id.volverAlMenu);
         //prueba rama menupp
 
-        play_pause=(Button)findViewById(R.id.play_pause); //crear el boton en opciones y ponerle ese id
+        play_pause=(Button)findViewById(R.id.play_pause);
 
-        mp = MediaPlayer.create(this,R.raw.musicajuego);  //esta va al  iniciar la aplicacion
+        mp = MediaPlayer.create(this,R.raw.musicajuego);  
 
 
 
@@ -39,12 +39,12 @@ public class OpcionesAct extends AppCompatActivity {
 
       public void playpause(View view){
 
-          play_pause.setOnClickListener(new View.OnClickListener() { //esto va fuera
+          play_pause.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if(mp.isPlaying()){
                         mp.pause();
-                        Toast.makeText(OpcionesAct.this, "Pausa" , Toast.LENGTH_SHORT).show();   //mirar xq esto es un mensaje  en popup y el main creo que habria que quitarlo
+                        Toast.makeText(OpcionesAct.this, "Pausa" , Toast.LENGTH_SHORT).show();
                     }else{
                         mp.start();
                         Toast.makeText(OpcionesAct.this, "Play" , Toast.LENGTH_SHORT).show();

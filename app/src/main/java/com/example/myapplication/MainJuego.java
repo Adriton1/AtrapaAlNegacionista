@@ -9,10 +9,13 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -26,7 +29,13 @@ public class MainJuego extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantallajuego);
-        //ImageView[] personas= new ImageView[];
+        ArrayList<ImageView> personas=new ArrayList<>();
+        GridLayout miGrid= (GridLayout) findViewById(R.id.Grid);
+        int count=miGrid.getChildCount();
+        for (int i=0;i<count;i++){
+            ImageView hijo=(ImageView) miGrid.getChildAt(i);
+            personas.add(hijo);
+        }
 
         if (savedInstanceState !=null){
             tiempRest=savedInstanceState.getLong("segundos");
@@ -49,7 +58,7 @@ public class MainJuego extends AppCompatActivity {
 
     public void onClick(View view){
 
-        switch (view.getId()){   //cambia al pesonaje en la casilla marcada
+        /*switch (view.getId()){   //cambia al pesonaje en la casilla marcada
             case R.id.imag11:
                 ImageView imagen11 = (ImageView) findViewById(R.id.imag11);
                 imagen11.setImageResource(R.drawable.e);    //cambia la imagen con la de la mascarilla
@@ -79,7 +88,7 @@ public class MainJuego extends AppCompatActivity {
                 hasGanado=true;
                 break;
 
-        }
+        }*/
 
     }
     /*public void haGanado (boolean hasGanado) {
@@ -100,7 +109,7 @@ public class MainJuego extends AppCompatActivity {
     }
 
     public void aleatorio(Integer caso){
-        //Código temporal. Inicializamos todas la imágenes
+       /* //Código temporal. Inicializamos todas la imágenes
         ImageView imagen11 =  findViewById(R.id.imag11);    //Infectado posicion 1
         ImageView imagen12 =  findViewById(R.id.imag12);    //Mascarilla bien puesta posicion 1
         ImageView imagen21 =  findViewById(R.id.imag21);    //Infectado posicion 2
@@ -144,7 +153,7 @@ public class MainJuego extends AppCompatActivity {
                 imagen32.setVisibility(View.VISIBLE);
                 imagen41.setVisibility(View.VISIBLE);
                 break;
-        }
+        }*/
 
     }
     public void cuentaatras(Long tiemp) {

@@ -38,7 +38,7 @@
             android:layout_width="123dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:backgroundTint="#06880C"
             android:fontFamily="serif"
             android:text="Jugar"
@@ -78,6 +78,12 @@
             android:textStyle="bold">
 
         </Button>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/puf" />
 
     </LinearLayout>
 

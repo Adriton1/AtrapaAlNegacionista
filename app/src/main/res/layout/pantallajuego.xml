@@ -6,7 +6,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondojuego">
+    <TableLayout
+        android:padding="16dp"
+        android:stretchColumns="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow>
 
+            <ImageView
+                android:id="@+id/imag12"
+                android:layout_width="180dp"
+                android:layout_height="240dp"
+                android:onClick="onClick"
+                android:visibility="visible"
+                app:srcCompat="@drawable/e" />
+
+            <ImageView
+                android:id="@+id/imag21"
+                android:layout_width="180dp"
+                android:layout_height="240dp"
+                android:onClick="onClick"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ey" />
+        </TableRow>
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imag22"
+                android:layout_width="180dp"
+                android:layout_height="240dp"
+                android:onClick="onClick"
+                android:visibility="visible"
+                app:srcCompat="@drawable/e" />
+
+            <ImageView
+                android:id="@+id/imag41"
+                android:layout_width="180dp"
+                android:layout_height="240dp"
+                android:onClick="onClick"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ey" />
+        </TableRow>
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imag31"
+                android:layout_width="180dp"
+                android:layout_height="240dp"
+                android:onClick="onClick"
+                android:visibility="visible"
+                app:srcCompat="@drawable/e" />
+
+            <ImageView
+                android:id="@+id/imag32"
+                android:layout_width="180dp"
+                android:layout_height="240dp"
+                android:onClick="onClick"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ey" />
+        </TableRow>
+
+    </TableLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -33,81 +93,10 @@
     </LinearLayout>
 
 
-    <ImageView
-        android:id="@+id/imag11"
-        android:layout_width="198dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="67dp"
-        android:onClick="onClick"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/ey" />
-
-    <ImageView
-        android:id="@+id/imag12"
-        android:layout_width="198dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="67dp"
-        android:onClick="onClick"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/e" />
-    <ImageView
-        android:id="@+id/imag21"
-        android:layout_width="198dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="67dp"
-        android:onClick="onClick"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/ey"
-        android:layout_marginLeft="200dp"/>
 
 
-    <ImageView
-        android:id="@+id/imag22"
-        android:layout_width="198dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="67dp"
-        android:onClick="onClick"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/e"
-        android:layout_marginLeft="200dp"/>
 
-    <ImageView
-        android:id="@+id/imag41"
-        android:layout_width="198dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="450dp"
-        android:onClick="onClick"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/ey"
-        android:layout_marginLeft="200dp"/>
 
-    <ImageView
-        android:id="@+id/imag42"
-        android:layout_width="198dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="450dp"
-        android:onClick="onClick"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/e"
-        android:layout_marginLeft="200dp"/>
-
-    <ImageView
-        android:id="@+id/imag31"
-        android:layout_width="198dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="450dp"
-        android:onClick="onClick"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/ey"/>
-
-    <ImageView
-        android:id="@+id/imag32"
-        android:layout_width="198dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="450dp"
-        android:onClick="onClick"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/e" />
 
 
 </RelativeLayout>

@@ -80,10 +80,14 @@
         </Button>
 
         <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/puf" />
+            android:id="@+id/imageButton5"
+            android:layout_width="56dp"
+            android:layout_height="59dp"
+            android:background="#00FFFFFF"
+            android:layout_gravity="center"
+            android:tint="#034AA1"
+            app:srcCompat="@mipmap/ic_stat_help_outline" />
+
 
     </LinearLayout>
 

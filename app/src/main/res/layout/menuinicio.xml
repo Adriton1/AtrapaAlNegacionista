@@ -13,7 +13,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="592dp"
         android:layout_marginLeft="23dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="23dp"
@@ -41,9 +41,9 @@
             android:layout_marginTop="30dp"
             android:backgroundTint="#06880C"
             android:fontFamily="serif"
+            android:onClick="FuncionEmpezarJuego"
             android:text="Jugar"
             android:textAlignment="center"
-            android:onClick="FuncionEmpezarJuego"
             android:textColor="#FFFFFF"
             android:textStyle="bold">
 
@@ -57,10 +57,11 @@
             android:layout_marginTop="45dp"
             android:backgroundTint="#AB5CB8"
             android:fontFamily="serif"
-            android:text="Opciones"
             android:onClick="FuncionMenuOpciones"
+            android:text="Opciones"
             android:textAlignment="center"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:textColor="#FFFFFF">
 
         </Button>
 
@@ -72,18 +73,24 @@
             android:layout_marginTop="45dp"
             android:backgroundTint="#B80303"
             android:fontFamily="serif"
-            android:text="Salir"
             android:onClick="FuncionTestSalir"
+            android:text="Salir"
             android:textAlignment="center"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:textColor="#FFFFFF">
 
         </Button>
 
         <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/puf" />
+            android:id="@+id/imageButton5"
+            android:layout_width="56dp"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:background="#00FFFFFF"
+            android:tint="#034AA1"
+            app:srcCompat="@mipmap/ic_stat_help_outline"
+            android:layout_marginTop="12dp"/>
+
 
     </LinearLayout>
 

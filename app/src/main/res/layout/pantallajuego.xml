@@ -6,67 +6,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondojuego">
-    <TableLayout
-        android:padding="16dp"
-        android:stretchColumns="1"
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TableRow>
+        android:layout_height="match_parent"
+        android:alignmentMode="alignBounds"
+        android:columnCount="2"
+        android:rowCount="2">
+        <ImageView
+            android:id="@+id/imag12"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
+            android:onClick="onClick"
+            android:visibility="visible"
+            app:srcCompat="@drawable/e" />
 
-            <ImageView
-                android:id="@+id/imag12"
-                android:layout_width="180dp"
-                android:layout_height="240dp"
-                android:onClick="onClick"
-                android:visibility="visible"
-                app:srcCompat="@drawable/e" />
+        <ImageView
+            android:id="@+id/imag21"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
+            android:onClick="onClick"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ey" />
+        <ImageView
+            android:id="@+id/imag22"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
+            android:onClick="onClick"
+            android:visibility="visible"
+            app:srcCompat="@drawable/e" />
 
-            <ImageView
-                android:id="@+id/imag21"
-                android:layout_width="180dp"
-                android:layout_height="240dp"
-                android:onClick="onClick"
-                android:visibility="visible"
-                app:srcCompat="@drawable/ey" />
-        </TableRow>
-        <TableRow>
+        <ImageView
+            android:id="@+id/imag41"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
+            android:onClick="onClick"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ey" />
+        <ImageView
+            android:id="@+id/imag31"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
+            android:onClick="onClick"
+            android:visibility="visible"
+            app:srcCompat="@drawable/e" />
 
-            <ImageView
-                android:id="@+id/imag22"
-                android:layout_width="180dp"
-                android:layout_height="240dp"
-                android:onClick="onClick"
-                android:visibility="visible"
-                app:srcCompat="@drawable/e" />
+        <ImageView
+            android:id="@+id/imag32"
+            android:layout_width="180dp"
+            android:layout_height="240dp"
+            android:onClick="onClick"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ey" />
 
-            <ImageView
-                android:id="@+id/imag41"
-                android:layout_width="180dp"
-                android:layout_height="240dp"
-                android:onClick="onClick"
-                android:visibility="visible"
-                app:srcCompat="@drawable/ey" />
-        </TableRow>
-        <TableRow>
-
-            <ImageView
-                android:id="@+id/imag31"
-                android:layout_width="180dp"
-                android:layout_height="240dp"
-                android:onClick="onClick"
-                android:visibility="visible"
-                app:srcCompat="@drawable/e" />
-
-            <ImageView
-                android:id="@+id/imag32"
-                android:layout_width="180dp"
-                android:layout_height="240dp"
-                android:onClick="onClick"
-                android:visibility="visible"
-                app:srcCompat="@drawable/ey" />
-        </TableRow>
-
-    </TableLayout>
+    </GridLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"

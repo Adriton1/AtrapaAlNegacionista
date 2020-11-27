@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
 import java.util.Random;
 
 public class MainJuego extends AppCompatActivity {
@@ -24,6 +26,8 @@ public class MainJuego extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantallajuego);
+        //ImageView[] personas= new ImageView[];
+
         if (savedInstanceState !=null){
             tiempRest=savedInstanceState.getLong("segundos");
             casoconcreto= savedInstanceState.getInt("caso");

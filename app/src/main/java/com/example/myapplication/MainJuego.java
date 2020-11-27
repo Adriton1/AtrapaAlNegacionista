@@ -25,8 +25,10 @@ public class MainJuego extends AppCompatActivity {
     long tiempRest;
     int casoconcreto;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantallajuego);
         ArrayList<ImageView> personas=new ArrayList<>();

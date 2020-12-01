@@ -34,8 +34,10 @@ public class MainJuego extends AppCompatActivity {
         ArrayList<ImageView> personas=new ArrayList<>();
         GridLayout miGrid= (GridLayout) findViewById(R.id.Grid);
         int count=miGrid.getChildCount();
+        int id;
         for (int i=0;i<count;i++){
             ImageView hijo=(ImageView) miGrid.getChildAt(i);
+            hijo.setImageResource(getImage("cara3bien"));
             personas.add(hijo);
         }
 
@@ -50,7 +52,11 @@ public class MainJuego extends AppCompatActivity {
             cuentaatras((long) 20);
         }
     }
+    public int getImage(String imageName){
+        int resourceId=this.getResources().getIdentifier(imageName,"drawable", this.getPackageName());
+        return resourceId;
 
+    }
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);

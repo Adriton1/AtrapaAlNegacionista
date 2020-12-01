@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     Button botonJugar,botonOpciones,botonSalir;
+    ImageButton botonTuto;
     TextView contador;
 
     @Override
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         botonSalir=(Button) findViewById(R.id.BotonSalir);
         botonJugar=(Button) findViewById(R.id.BotonJugar);
         botonOpciones=(Button) findViewById(R.id.BotonOpciones);
+        botonTuto= (ImageButton) findViewById(R.id.tuto);
     }
     public void FuncionMenuOpciones(View view){
         botonOpciones.setOnClickListener(new OnClickListener() {
@@ -48,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,MainJuego.class));
+            }
+        });
+    }
+    public void FuncionTutorial(View view){
+        botonTuto.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,TutoActivity.class));
             }
         });
     }

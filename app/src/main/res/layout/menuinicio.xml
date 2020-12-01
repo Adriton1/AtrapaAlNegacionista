@@ -82,14 +82,15 @@
         </Button>
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/tuto"
             android:layout_width="56dp"
             android:layout_height="59dp"
             android:layout_gravity="center"
             android:background="#00FFFFFF"
             android:tint="#034AA1"
             app:srcCompat="@mipmap/ic_stat_help_outline"
-            android:layout_marginTop="12dp"/>
+            android:layout_marginTop="12dp"
+            android:onClick="FuncionTutorial"/>
 
 
     </LinearLayout>

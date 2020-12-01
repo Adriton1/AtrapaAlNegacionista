@@ -15,6 +15,7 @@
         <activity android:name=".PantallaDerrota" />
         <activity android:name=".MenuPausa" />
         <activity android:name=".MainJuego" ></activity>
+        <activity android:name=".TutoActivity"/>
         <activity android:name=".OpcionesAct" />
         <activity android:name=".MainActivity" android:theme="@style/SplashTheme">
             <intent-filter>

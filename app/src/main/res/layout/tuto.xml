@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TutoActivity"
+    android:background="@drawable/fondoapp2">
+
+    <ImageButton
+        android:id="@+id/salirtuto"
+        android:layout_width="42dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="350dp"
+        android:onClick="FuncionSalirTuto"
+        app:srcCompat="@mipmap/close" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="80dp"
+        android:background="#292727"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="El juego 'Encuentra al Negacionista' consiste en lo que se infiere en el título del juego: encontar a la persona que tiene mal puesta la mascarilla. "
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="16dp"
+                    />
+
+                <ImageView
+                    android:layout_width="288dp"
+                    android:layout_height="414dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/tuto1" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

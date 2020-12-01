@@ -39,7 +39,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="El juego 'Encuentra al Negacionista' consiste en lo que se infiere en el título del juego: encontar a la persona que tiene mal puesta la mascarilla. "
+                    android:text="El juego 'Encuentra al Negacionista' consiste en  encontar a la persona que tiene mal puesta la mascarilla como se puede inferir por el título del juego, además lo tendrás que hacer antes de que se acabe el tiempo. Esta imagen a continuación es un ejemplo de la pantalla del juego."
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:layout_marginLeft="20dp"
@@ -49,11 +49,59 @@
                     />
 
                 <ImageView
+                    android:layout_marginTop="14dp"
                     android:layout_width="288dp"
                     android:layout_height="414dp"
                     android:layout_gravity="center"
                     android:background="@drawable/tuto1" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Una vez encuentres a la persona con la mascarilla mal puesta deberás pulsar sobre ella."
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="16dp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
+                        android:background="@drawable/bien2" />
+                    <ImageView
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
+                        android:background="@drawable/mal2" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Estas dos imagenes mostradas corresponden a una persona que tiene bien puesta la mascarila y otra que la tiene mal."
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="16dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Aviso: Si en una fiesta compartes tu petaca, te cargas a la tia Paca."
+                    android:textColor="#FA0404"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="30dp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </ScrollView>

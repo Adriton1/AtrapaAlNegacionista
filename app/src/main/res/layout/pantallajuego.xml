@@ -73,25 +73,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="18dp">
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="103dp"
             android:layout_height="54dp"
-            android:background="@color/white"
-            app:srcCompat="@drawable/engranaje2"
-            android:onClick="FuncionIrOpcionesJuego"/>
+            android:background="#00FFFFFF"
+            android:onClick="FuncionIrOpcionesJuego"
+            app:srcCompat="@mipmap/settings" />
 
         <TextView
             android:id="@+id/cuentaAtras"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:gravity="center_horizontal"
-            android:textAlignment="center"
-            android:textColor="#FF5722"
             android:paddingTop="13dp"
-            android:textSize="23dp" />
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

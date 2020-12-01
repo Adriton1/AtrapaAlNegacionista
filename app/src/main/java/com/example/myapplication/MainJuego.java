@@ -37,7 +37,7 @@ public class MainJuego extends AppCompatActivity {
         int id;
         for (int i=0;i<count;i++){
             ImageView hijo=(ImageView) miGrid.getChildAt(i);
-            hijo.setImageResource(getImage("cara3bien"));
+            hijo.setImageResource(getImage("bien3"));
             personas.add(hijo);
         }
 

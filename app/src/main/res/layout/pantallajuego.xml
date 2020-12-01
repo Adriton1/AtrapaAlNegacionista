@@ -22,7 +22,7 @@
             android:onClick="onClick"
             android:tag="Persona"
             android:visibility="visible"
-            app:srcCompat="@drawable/dosmal" />
+            app:srcCompat="@drawable/bien1" />
 
         <ImageView
             android:id="@+id/imag21"
@@ -31,7 +31,7 @@
             android:onClick="onClick"
             android:tag="Persona"
             android:visibility="visible"
-            app:srcCompat="@drawable/unomal" />
+            app:srcCompat="@drawable/bien1" />
 
         <ImageView
             android:id="@+id/imag22"
@@ -40,7 +40,7 @@
             android:onClick="onClick"
             android:tag="Persona"
             android:visibility="visible"
-            app:srcCompat="@drawable/tresmal" />
+            app:srcCompat="@drawable/bien1" />
 
         <ImageView
             android:id="@+id/imag41"
@@ -49,7 +49,7 @@
             android:onClick="onClick"
             android:tag="Persona"
             android:visibility="visible"
-            app:srcCompat="@drawable/cuatromal" />
+            app:srcCompat="@drawable/bien1" />
 
         <ImageView
             android:id="@+id/imag31"
@@ -58,7 +58,7 @@
             android:onClick="onClick"
             android:tag="Persona"
             android:visibility="visible"
-            app:srcCompat="@drawable/dosbien" />
+            app:srcCompat="@drawable/bien1" />
 
         <ImageView
             android:id="@+id/imag32"
@@ -67,7 +67,7 @@
             android:onClick="onClick"
             android:tag="Persona"
             android:visibility="visible"
-            app:srcCompat="@drawable/unobien" />
+            app:srcCompat="@drawable/bien1" />
 
     </GridLayout>
     <LinearLayout
@@ -96,12 +96,5 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
-
-
-
-
-
-
 
 </RelativeLayout>

@@ -3,6 +3,10 @@
     <item android:drawable="@color/white"/>
     <item>
         <bitmap android:src="@mipmap/mysplash"
-             android:gravity="center"/>
+             android:gravity="center"
+            android:layout_height="20dp"
+            android:layout_width="20dp"
+            />
+
     </item>
 </layer-list>

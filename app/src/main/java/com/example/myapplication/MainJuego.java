@@ -34,10 +34,12 @@ public class MainJuego extends AppCompatActivity {
         ArrayList<ImageView> personas=new ArrayList<>();
         GridLayout miGrid= (GridLayout) findViewById(R.id.Grid);
         int count=miGrid.getChildCount();
-        int id;
+        int id,number;
+        Random ran=new Random();
         for (int i=0;i<count;i++){
             ImageView hijo=(ImageView) miGrid.getChildAt(i);
-            hijo.setImageResource(getImage("bien3"));
+            number=ran.nextInt(5-1)+1;
+            hijo.setImageResource(getImage("bien"+number));
             personas.add(hijo);
         }
 

@@ -70,13 +70,13 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/play_pause"
+                android:id="@+id/botonMusica"
                 android:layout_width="162dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
-                android:onClick="play_pause"
+                android:onClick="FuncionesMusica"
                 android:text="Play/Pause" />
 
             <Button

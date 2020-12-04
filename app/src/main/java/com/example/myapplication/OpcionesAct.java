@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -14,75 +15,73 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import static android.app.PendingIntent.getActivity;
+import org.jetbrains.annotations.NotNull;
+
+
+
 
 public class OpcionesAct extends AppCompatActivity  {
     ImageButton cruz;
-    Button guardar, volverAlMenu;
-    /*Button play_pause;
-    MediaPlayer mp;*/
-    //variables Servicio
-    public boolean encendida;
-    Button play_pause;
-    Context activity;
-    //  fin variables servicio
+    Button guardar, volverAlMenu,musica;
+    public static boolean encendida;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menuopciones);
+
         cruz= (ImageButton) findViewById(R.id.cruz);
         guardar=(Button) findViewById(R.id.guardar);
         volverAlMenu=(Button) findViewById(R.id.volverAlMenu);
-        //prueba rama menupp
+        musica=(Button) findViewById(R.id.botonMusica);
+        if (savedInstanceState ==null){
+                encendida=true;
+        }
+        else{
+            encendida=savedInstanceState.getBoolean("estado");
+        }
 
-        /*play_pause=(Button)findViewById(R.id.play_pause);
-            esto es vss
-        mp = MediaPlayer.create(this,R.raw.musicajuego);*/
 
-        //de servicios
-        //variable booleana para controlar el estado de la musica
-        encendida=false;
-        //fin servicio
     }
 
-    // inicio servicio
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        //Inflate the layout for this fragment
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("estado",encendida);
+    }
 
-        View fragmento = inflater.inflate(R.layout.menuopciones, container, false);
-        //mirar lo de fragmento
-        play_pause = (Button)fragmento.findViewById(R.id.play_pause);
+    public void FuncionesMusica(View view) {
+        musica = (Button) findViewById(R.id.botonMusica);
 
-        play_pause.setOnClickListener(new View.OnClickListener() {
+        musica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(encendida){
+                if (encendida) {
                     apagaMusica();
-                }else {
+                } else {
                     enciendeMusica();
                 }
             }
         });
-        return fragmento;
     }
-
-
     public void enciendeMusica (){
 
-        Intent  mpI = new Intent(getActivity(), ServicioMusica.class);
+        Intent  mpI = new Intent(this, ServicioMusica.class);
 
-        getActivity().startService(mpI);
+        this.startService(mpI);
 
         encendida = !encendida;
     }
 
     public void apagaMusica(){
-        Intent  mpI = new Intent(getActivity(), ServicioMusica.class);
+        Intent  mpI = new Intent(this, ServicioMusica.class);
 
-        getActivity().stopService(mpI);
+        this.stopService(mpI);
 
         encendida = !encendida;
     }
+
+
 //fin servicio
 
 
@@ -128,13 +127,6 @@ public class OpcionesAct extends AppCompatActivity  {
         });
     }
 
-    public Context getActivity() {
 
-        return activity;
-    }
-
-    public void setActivity(Context activity) {
-        this.activity = activity;
-    }
 }
 

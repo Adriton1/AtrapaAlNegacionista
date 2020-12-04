@@ -41,6 +41,11 @@ public class ServicioMusica  extends Service {
         mp = null;
     }
 
+    public void mute(){
+
+        mp.setVolume(0,0);
+    }
+
 
 
     @Nullable

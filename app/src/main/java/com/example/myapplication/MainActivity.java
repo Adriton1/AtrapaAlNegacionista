@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -14,9 +16,12 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+import static com.example.myapplication.OpcionesAct.encendida;
+
 public class MainActivity extends AppCompatActivity {
     Button botonJugar,botonOpciones,botonSalir;
     TextView contador;
+    public Integer inicio=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,17 @@ public class MainActivity extends AppCompatActivity {
         botonSalir=(Button) findViewById(R.id.BotonSalir);
         botonJugar=(Button) findViewById(R.id.BotonJugar);
         botonOpciones=(Button) findViewById(R.id.BotonOpciones);
+        //Si es la primera vez que se inicia el programa se inicia con la musica
+        if(inicio==0) {
+            Intent mpI = new Intent(this, ServicioMusica.class);
+            this.startService(mpI);
+            inicio=inicio+1;
+        }
+
     }
+
+
+
     public void FuncionMenuOpciones(View view){
         botonOpciones.setOnClickListener(new OnClickListener() {
             @Override
@@ -51,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }

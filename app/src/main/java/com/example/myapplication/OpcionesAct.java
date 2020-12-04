@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -14,13 +16,16 @@ import android.widget.Toast;
 
 import static android.app.PendingIntent.getActivity;
 
-public class OpcionesAct extends AppCompatActivity {
+public class OpcionesAct extends AppCompatActivity  {
     ImageButton cruz;
     Button guardar, volverAlMenu;
     /*Button play_pause;
     MediaPlayer mp;*/
+    //variables Servicio
     public boolean encendida;
     Button play_pause;
+    Context activity;
+    //  fin variables servicio
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +36,11 @@ public class OpcionesAct extends AppCompatActivity {
         //prueba rama menupp
 
         /*play_pause=(Button)findViewById(R.id.play_pause);
-
+            esto es vss
         mp = MediaPlayer.create(this,R.raw.musicajuego);*/
 
         //de servicios
+        //variable booleana para controlar el estado de la musica
         encendida=false;
         //fin servicio
     }
@@ -61,7 +67,7 @@ public class OpcionesAct extends AppCompatActivity {
     }
 
 
-    public void enciendeMusica(){
+    public void enciendeMusica (){
 
         Intent  mpI = new Intent(getActivity(), ServicioMusica.class);
 
@@ -78,7 +84,9 @@ public class OpcionesAct extends AppCompatActivity {
         encendida = !encendida;
     }
 //fin servicio
-/*
+
+
+/* esta es version sin servicio vss
     public void playpause(View view){
 
         play_pause.setOnClickListener(new View.OnClickListener() {
@@ -120,4 +128,13 @@ public class OpcionesAct extends AppCompatActivity {
         });
     }
 
+    public Context getActivity() {
+
+        return activity;
+    }
+
+    public void setActivity(Context activity) {
+        this.activity = activity;
+    }
 }
+

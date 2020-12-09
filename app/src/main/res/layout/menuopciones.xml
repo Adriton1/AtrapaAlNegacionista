@@ -60,22 +60,24 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
+             <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="40dp"
-                android:text="Volumen de la música: "
+                android:text="Play / Pause música: "
                 android:textColor="@color/white"
                 android:textSize="30sp" />
 
-            <SeekBar
-                android:id="@+id/seekBar2"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/botonMusica"
+                android:layout_width="162dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="20dp"
+                android:onClick="FuncionesMusica"
+                android:text="Play/Pause" />
 
             <Button
                 android:id="@+id/volverAlMenu"

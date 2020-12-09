@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button botonJugar,botonOpciones,botonSalir;
     ImageButton botonTuto;
     TextView contador;
+    public Integer inicio=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
         botonJugar=(Button) findViewById(R.id.BotonJugar);
         botonOpciones=(Button) findViewById(R.id.BotonOpciones);
         botonTuto= (ImageButton) findViewById(R.id.tuto);
+        //Si es la primera vez que se inicia el programa se inicia con la musica
+        if(inicio==0) {
+            Intent mpI = new Intent(this, ServicioMusica.class);
+            this.startService(mpI);
+            inicio=inicio+1;
+        }
     }
     public void FuncionMenuOpciones(View view){
         botonOpciones.setOnClickListener(new OnClickListener() {

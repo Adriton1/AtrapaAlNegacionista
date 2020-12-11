@@ -36,17 +36,17 @@ public class MainJuego extends AppCompatActivity {
         int count=miGrid.getChildCount();
         int id,number,badSelect;
         Random ran=new Random();
-        badSelect=ran.nextInt(7-1)+1;
+        badSelect=ran.nextInt(6);
         for (int i=0;i<count;i++){
             ImageView hijo=(ImageView) miGrid.getChildAt(i);
             number=ran.nextInt(5-1)+1;
             if(i==badSelect){
                 hijo.setImageResource(getImage("mal"+number));
-                hijo.setTag("PersonaContagiada");
+                hijo.setTag("PersonaContagiada"+number);
             }
             else {
                 hijo.setImageResource(getImage("bien" + number));
-                hijo.setTag("Persona");
+                hijo.setTag("Persona"+number);
             }
             personas.add(hijo);
         }
@@ -69,18 +69,21 @@ public class MainJuego extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putLong("segundos",tiempRest);
-        outState.putInt("caso",casoconcreto);
+        outState.putInt("caso",casoconcreto); //revisarlo
     }
 
     public void onClick(View view){
         int miID=view.getId();
         ImageView laImagen=(ImageView) findViewById(miID);
-        if(laImagen.getTag()=="PersonaContagiada"){
-            contador.setText("Has encontrado al negacionista!!");
+        String indice;
+        if(laImagen.getTag().toString().contains("PersonaContagiada")){
+            contador.setText("Has encontrado al negacionista");
+            indice=laImagen.getTag().toString().substring(17); //ALTA GUARRERÍA QUE ACABO DE METER PERO SON LAS 0:21 ASI QUE PARA ALANTE
+            laImagen.setImageResource(getImage("bien"+indice));
             hasGanado=true;
         }
         else{
-
+            //Quitar tiempo del contador¿?¿?
         }
 
     }
@@ -89,6 +92,7 @@ public class MainJuego extends AppCompatActivity {
             startActivity(new Intent(MainJuego.this, PantallaDerrota.class));
         }
         else{
+            //por alguna razón el juego crashea de lo lindo al pasar a Pantalla Victoria. Revisar el bug.
             startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
         }
     }
@@ -119,7 +123,6 @@ public class MainJuego extends AppCompatActivity {
 
             public void onFinish() {
                 haGanado(hasGanado);
-                //Te mostraría una pantalla que pone has perdido, con la opción de volver a jugar o salir de la app
             }
         }.start();
     }

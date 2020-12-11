@@ -13,6 +13,7 @@
 
         </activity>
         <activity android:name=".PantallaDerrota" />
+        <activity android:name=".PantallaVictoria" />
         <activity android:name=".MenuPausa" />
         <activity android:name=".MainJuego" ></activity>
         <activity android:name=".TutoActivity"/>

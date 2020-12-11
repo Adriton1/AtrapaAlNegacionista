@@ -78,6 +78,7 @@ public class MainJuego extends AppCompatActivity {
         if(laImagen.getTag()=="PersonaContagiada"){
             contador.setText("Has encontrado al negacionista!!");
             hasGanado=true;
+            haGanado(hasGanado);
         }
         else{
 
@@ -118,7 +119,9 @@ public class MainJuego extends AppCompatActivity {
             }
 
             public void onFinish() {
+                if(!hasGanado){
                 haGanado(hasGanado);
+                }
                 //Te mostraría una pantalla que pone has perdido, con la opción de volver a jugar o salir de la app
             }
         }.start();

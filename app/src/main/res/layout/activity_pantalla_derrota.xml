@@ -18,26 +18,37 @@
         android:textSize="30sp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_gravity="center" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="281dp"
         android:layout_marginTop="100dp">
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="128dp"
-        android:layout_height="238dp"
-        app:srcCompat="@drawable/d" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="130dp"
-        android:layout_height="238dp"
-        app:srcCompat="@drawable/a" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="128dp"
+            android:layout_height="238dp"
+            app:srcCompat="@drawable/d" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="127dp"
-        android:layout_height="162dp"
-        app:srcCompat="@drawable/s"/>
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="130dp"
+            android:layout_height="238dp"
+            app:srcCompat="@drawable/a" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="127dp"
+            android:layout_height="162dp"
+            app:srcCompat="@drawable/s" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/volverPerdido"
+        android:layout_width="246dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#F44336"
+        android:onClick="FuncionVolverMenuPrincipal"
+        android:text="Volver al menú principal" />
 </LinearLayout>

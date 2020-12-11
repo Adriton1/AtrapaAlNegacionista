@@ -26,4 +26,13 @@
         android:layout_height="343dp"
         app:srcCompat="@drawable/celebracion"/>
 
+    <Button
+        android:id="@+id/volver"
+        android:layout_width="246dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#4CAF50"
+        android:onClick="FuncionVolverMenuPrincipal"
+        android:text="Volver al menú principal" />
+
 </LinearLayout>

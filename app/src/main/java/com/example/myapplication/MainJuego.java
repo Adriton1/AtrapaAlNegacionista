@@ -123,6 +123,7 @@ public class MainJuego extends AppCompatActivity {
 
             public void onFinish() {
                 haGanado(hasGanado);
+                //Te mostraría una pantalla que pone has perdido, con la opción de volver a jugar o salir de la app
             }
         }.start();
     }

@@ -88,20 +88,10 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginBottom="29dp"
                     android:textSize="16dp"
                     />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="Aviso: Si en una fiesta compartes tu petaca, te cargas a la tia Paca."
-                    android:textColor="#FA0404"
-                    android:textSize="16dp"
-                    android:layout_marginBottom="30dp"
-                    android:textStyle="bold" />
             </LinearLayout>
 
         </ScrollView>

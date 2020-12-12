@@ -77,17 +77,18 @@ public class MainJuego extends AppCompatActivity {
         ImageView laImagen=(ImageView) findViewById(miID);
         String indice;
         if(laImagen.getTag().toString().contains("PersonaContagiada")){
-            contador.setText("Has encontrado al negacionista");
+            contador.setText("Lo has encontrado!!!");
             indice=laImagen.getTag().toString().substring(17); //ALTA GUARRERÍA QUE ACABO DE METER PERO SON LAS 0:21 ASI QUE PARA ALANTE
             laImagen.setImageResource(getImage("bien"+indice));
             hasGanado=true;
+            redirigir();
         }
         else{
-            //Quitar tiempo del contador¿?¿?
+
         }
 
     }
-    public void haGanado (boolean hasGanado) {
+    /*public void haGanado (boolean hasGanado) {
         if (hasGanado == false) {
             startActivity(new Intent(MainJuego.this, PantallaDerrota.class));
         }
@@ -95,7 +96,7 @@ public class MainJuego extends AppCompatActivity {
             //por alguna razón el juego crashea de lo lindo al pasar a Pantalla Victoria. Revisar el bug.
             startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
         }
-    }
+    }*/
 
 
     public void FuncionIrOpcionesJuego(View view) {
@@ -122,8 +123,26 @@ public class MainJuego extends AppCompatActivity {
             }
 
             public void onFinish() {
-                haGanado(hasGanado);
+                if(tiempRest==0 && hasGanado==false){
+                    startActivity(new Intent(MainJuego.this, PantallaDerrota.class));
+                }
                 //Te mostraría una pantalla que pone has perdido, con la opción de volver a jugar o salir de la app
+            }
+        }.start();
+    }
+    public void redirigir() {
+        //Se trata de un contador simple si se termina el tiempo se acaba el juego
+        final long duracionTotal= 3 * 1000; //milisegundos
+        final long tiempoEntreTicks= 1000; //un segundo
+        new CountDownTimer(duracionTotal, tiempoEntreTicks) {
+            public void onTick(long milisegHastaFin) {
+                long segRest = (milisegHastaFin) /1000;
+                tiempRest=segRest;
+            }
+
+            public void onFinish() {
+                if(hasGanado)
+                    startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
             }
         }.start();
     }

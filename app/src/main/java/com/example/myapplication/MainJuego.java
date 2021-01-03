@@ -25,6 +25,7 @@ public class MainJuego extends AppCompatActivity {
     long tiempRest;
     int casoconcreto;
     int puntuacion;
+    int karma=1;
     public ArrayList<ImageView> personas=new ArrayList<>();
 
 
@@ -37,6 +38,7 @@ public class MainJuego extends AppCompatActivity {
 
         if (savedInstanceState !=null){
             tiempRest=savedInstanceState.getLong("segundos");
+            karma=savedInstanceState.getInt("penalizacion");
             casoconcreto= savedInstanceState.getInt("caso");
             cuentaatras(tiempRest);
         }
@@ -77,6 +79,7 @@ public class MainJuego extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putLong("segundos",tiempRest);
         outState.putInt("caso",casoconcreto); //revisarlo
+        outState.putInt("penalizacionSpam",karma);
     }
 
     public void onClick(View view){
@@ -84,15 +87,16 @@ public class MainJuego extends AppCompatActivity {
         ImageView laImagen=(ImageView) findViewById(miID);
         String indice;
         if(laImagen.getTag().toString().contains("PersonaContagiada")){
+            //Corrige la mascarilla de la persona que tiene mal puesta la mascallira
             indice=laImagen.getTag().toString().substring(17);
-
             laImagen.setImageResource(getImage("bien"+indice));
+            puntuacion=puntuacion+100;
             RandomizePeople();
-            hasGanado=true;
-            //redirigir();
+
         }
         else{
-
+            karma++;
+            puntuacion= puntuacion - (50 * karma);
         }
 
     }
@@ -130,6 +134,8 @@ public class MainJuego extends AppCompatActivity {
             }
 
             public void onFinish() {
+                karma=0;
+                contador.setText("Puntuación: "+ puntuacion);
                 /*if(tiempRest==0 && hasGanado==false){
                     startActivity(new Intent(MainJuego.this, PantallaDerrota.class));
                 }
@@ -149,6 +155,7 @@ public class MainJuego extends AppCompatActivity {
 
             public void onFinish() {
                 if(hasGanado){
+                    karma=0;
                     Intent i=new Intent(MainJuego.this,PantallaVictoria.class);
                     i.putExtra("Puntuacion",puntuacion);
                     startActivity(i);

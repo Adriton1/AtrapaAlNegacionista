@@ -4,16 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondoappFinal"
-    android:orientation="vertical"><![CDATA[
-
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-
-    ]]>
+    android:background="@drawable/fondoappfinal"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/volver"
@@ -27,7 +19,8 @@
         android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombre"
-        tools:layout_editor_absoluteX="82dp" />
+        tools:layout_editor_absoluteX="82dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/nombre"
@@ -45,7 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="567dp" />
+        tools:layout_editor_absoluteY="567dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
@@ -57,7 +51,8 @@
         android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="93dp" />
+        tools:layout_editor_absoluteX="93dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView4"

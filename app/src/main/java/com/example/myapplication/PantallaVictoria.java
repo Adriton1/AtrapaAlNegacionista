@@ -16,6 +16,8 @@ public class PantallaVictoria extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_victoria);
         volver=(Button) findViewById(R.id.volver);
+        Intent intent=getIntent();
+        int puntuacionFinal=intent.getIntExtra("Puntuacion",0);
 
     }
     public void FuncionVolverMenuPrincipal(View view){

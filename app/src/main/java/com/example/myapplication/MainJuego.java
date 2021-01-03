@@ -24,6 +24,8 @@ public class MainJuego extends AppCompatActivity {
     boolean hasGanado=false;
     long tiempRest;
     int casoconcreto;
+    int puntuacion;
+    public ArrayList<ImageView> personas=new ArrayList<>();
 
 
     @Override
@@ -31,7 +33,18 @@ public class MainJuego extends AppCompatActivity {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantallajuego);
-        ArrayList<ImageView> personas=new ArrayList<>();
+
+        if (savedInstanceState !=null){
+            tiempRest=savedInstanceState.getLong("segundos");
+            casoconcreto= savedInstanceState.getInt("caso");
+            cuentaatras(tiempRest);
+        }
+        else {
+            cuentaatras((long) 20);
+        }
+
+    }
+    public void RandomizePeople(){
         GridLayout miGrid= (GridLayout) findViewById(R.id.Grid);
         int count=miGrid.getChildCount();
         int id,number,badSelect;
@@ -51,14 +64,7 @@ public class MainJuego extends AppCompatActivity {
             personas.add(hijo);
         }
 
-        if (savedInstanceState !=null){
-            tiempRest=savedInstanceState.getLong("segundos");
-            casoconcreto= savedInstanceState.getInt("caso");
-            cuentaatras(tiempRest);
-        }
-        else {
-            cuentaatras((long) 20);
-        }
+
     }
     public int getImage(String imageName){
         int resourceId=this.getResources().getIdentifier(imageName,"drawable", this.getPackageName());
@@ -123,10 +129,10 @@ public class MainJuego extends AppCompatActivity {
             }
 
             public void onFinish() {
-                if(tiempRest==0 && hasGanado==false){
+                /*if(tiempRest==0 && hasGanado==false){
                     startActivity(new Intent(MainJuego.this, PantallaDerrota.class));
                 }
-                //Te mostraría una pantalla que pone has perdido, con la opción de volver a jugar o salir de la app
+                //Te mostraría una pantalla que pone has perdido, con la opción de volver a jugar o salir de la app*/
             }
         }.start();
     }
@@ -141,8 +147,12 @@ public class MainJuego extends AppCompatActivity {
             }
 
             public void onFinish() {
-                if(hasGanado)
-                    startActivity(new Intent(MainJuego.this, PantallaVictoria.class));
+                if(hasGanado){
+                    Intent i=new Intent(MainJuego.this,PantallaVictoria.class);
+                    i.putExtra("Puntuacion",puntuacion);
+                    startActivity(i);
+                }
+
             }
         }.start();
     }

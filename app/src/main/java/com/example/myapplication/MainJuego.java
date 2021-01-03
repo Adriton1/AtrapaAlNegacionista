@@ -24,7 +24,7 @@ public class MainJuego extends AppCompatActivity {
     boolean hasGanado=false;
     long tiempRest;
     int casoconcreto;
-    int puntuacion;
+    int puntuacion,marcador;
     int karma=1;
     public ArrayList<ImageView> personas=new ArrayList<>();
 
@@ -40,6 +40,7 @@ public class MainJuego extends AppCompatActivity {
             tiempRest=savedInstanceState.getLong("segundos");
             karma=savedInstanceState.getInt("penalizacion");
             casoconcreto= savedInstanceState.getInt("caso");
+            puntuacion=savedInstanceState.getInt("puntuacion");
             cuentaatras(tiempRest);
         }
         else {
@@ -80,6 +81,7 @@ public class MainJuego extends AppCompatActivity {
         outState.putLong("segundos",tiempRest);
         outState.putInt("caso",casoconcreto); //revisarlo
         outState.putInt("penalizacionSpam",karma);
+        outState.putInt("puntuacion",puntuacion);
     }
 
     public void onClick(View view){
@@ -95,8 +97,8 @@ public class MainJuego extends AppCompatActivity {
 
         }
         else{
-            karma++;
             puntuacion= puntuacion - (50 * karma);
+            karma++;
         }
 
     }
@@ -134,8 +136,11 @@ public class MainJuego extends AppCompatActivity {
             }
 
             public void onFinish() {
-                karma=0;
-                contador.setText("Puntuación: "+ puntuacion);
+                //marcador y parte de puntucacion es provisional hasta que se haga la base de datos
+                marcador=puntuacion;
+                puntuacion=0;
+                karma=1;
+                contador.setText("Puntuación: "+ marcador);
                 /*if(tiempRest==0 && hasGanado==false){
                     startActivity(new Intent(MainJuego.this, PantallaDerrota.class));
                 }

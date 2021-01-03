@@ -84,8 +84,7 @@ public class MainJuego extends AppCompatActivity {
         ImageView laImagen=(ImageView) findViewById(miID);
         String indice;
         if(laImagen.getTag().toString().contains("PersonaContagiada")){
-            contador.setText("Lo has encontrado!!!");
-            indice=laImagen.getTag().toString().substring(17); //ALTA GUARRERÍA QUE ACABO DE METER PERO SON LAS 0:21 ASI QUE PARA ALANTE
+            indice=laImagen.getTag().toString().substring(17);
 
             laImagen.setImageResource(getImage("bien"+indice));
             RandomizePeople();
@@ -127,8 +126,7 @@ public class MainJuego extends AppCompatActivity {
             public void onTick(long milisegHastaFin) {
                 long segRest = (milisegHastaFin) /1000;
                 tiempRest=segRest;
-                if(!hasGanado)
-                    contador.setText("Quedan: "+String.valueOf(segRest)+" segundos!!!");
+                contador.setText("Quedan: "+String.valueOf(segRest)+" segundos!!!");
             }
 
             public void onFinish() {

@@ -33,6 +33,7 @@ public class MainJuego extends AppCompatActivity {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantallajuego);
+        RandomizePeople();
 
         if (savedInstanceState !=null){
             tiempRest=savedInstanceState.getLong("segundos");
@@ -85,9 +86,11 @@ public class MainJuego extends AppCompatActivity {
         if(laImagen.getTag().toString().contains("PersonaContagiada")){
             contador.setText("Lo has encontrado!!!");
             indice=laImagen.getTag().toString().substring(17); //ALTA GUARRERÍA QUE ACABO DE METER PERO SON LAS 0:21 ASI QUE PARA ALANTE
+
             laImagen.setImageResource(getImage("bien"+indice));
+            RandomizePeople();
             hasGanado=true;
-            redirigir();
+            //redirigir();
         }
         else{
 

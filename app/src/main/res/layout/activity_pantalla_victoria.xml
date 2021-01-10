@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondoappfinal"
+    android:background="@drawable/fondoaplicacionfinal"
     android:orientation="vertical">
 
     <Button
@@ -19,8 +19,8 @@
         android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombre"
-        tools:layout_editor_absoluteX="82dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="82dp" />
 
     <EditText
         android:id="@+id/nombre"
@@ -32,17 +32,17 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Nombre Usuario"
+        android:inputType="textPersonName"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="567dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="567dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/TimeOutView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -51,8 +51,8 @@
         android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="93dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="93dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -66,7 +66,7 @@
         android:text="Nombre 1"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/TimeOutView" />
 
     <TextView
         android:id="@+id/textView5"
@@ -77,7 +77,7 @@
         android:layout_marginRight="50dp"
         android:text="Puntuación 1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/TimeOutView" />
 
     <TextView
         android:id="@+id/textView6"

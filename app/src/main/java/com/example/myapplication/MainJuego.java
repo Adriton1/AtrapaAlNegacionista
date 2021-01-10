@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.*;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -29,12 +35,14 @@ public class MainJuego extends AppCompatActivity {
     public ArrayList<ImageView> personas=new ArrayList<>();
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantallajuego);
         RandomizePeople();
+
 
         if (savedInstanceState !=null){
             tiempRest=savedInstanceState.getLong("segundos");
@@ -84,7 +92,7 @@ public class MainJuego extends AppCompatActivity {
         outState.putInt("puntuacion",puntuacion);
     }
 
-    public void onClick(View view){
+    public void onClick(View view) throws JSONException, IOException {
         int miID=view.getId();
         ImageView laImagen=(ImageView) findViewById(miID);
         String indice;
@@ -93,6 +101,7 @@ public class MainJuego extends AppCompatActivity {
             indice=laImagen.getTag().toString().substring(17);
             laImagen.setImageResource(getImage("bien"+indice));
             puntuacion=puntuacion+100;
+
             RandomizePeople();
 
         }
@@ -102,6 +111,7 @@ public class MainJuego extends AppCompatActivity {
         }
 
     }
+
     /*public void haGanado (boolean hasGanado) {
         if (hasGanado == false) {
             startActivity(new Intent(MainJuego.this, PantallaDerrota.class));
@@ -138,15 +148,52 @@ public class MainJuego extends AppCompatActivity {
             public void onFinish() {
                 //marcador y parte de puntucacion es provisional hasta que se haga la base de datos
                 marcador=puntuacion;
-                puntuacion=0;
+
                 karma=1;
                 contador.setText("Puntuación: "+ marcador);
                 /*if(tiempRest==0 && hasGanado==false){
                     startActivity(new Intent(MainJuego.this, PantallaDerrota.class));
                 }
                 //Te mostraría una pantalla que pone has perdido, con la opción de volver a jugar o salir de la app*/
+                karma=0;
+
+                try {
+                    serializarPuntuacion();
+                } catch (JSONException e) {
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Intent i=new Intent(MainJuego.this,PantallaVictoria.class);
+                startActivity(i);
+
             }
         }.start();
+    }
+    public void serializarPuntuacion() throws JSONException, IOException {
+        PuntuacionDB lasPuntuaciones=new PuntuacionDB();
+        lasPuntuaciones.setPuntuacionReciente(puntuacion);
+        File file=new File(getFilesDir(),"Mi carpeta");
+        if(!file.exists()){
+            file.mkdir();
+        }
+        File testFile= new File(file,"json.txt");
+
+        try {
+            FileWriter writer= new FileWriter(testFile);
+            JSONObject obj= new JSONObject();
+            obj.put("puntReciente",lasPuntuaciones.getPuntuacionReciente());
+            writer.write(obj.toString());
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        puntuacion=0;
+
+    }
+    private void deserializarPuntuacion(){
+
     }
     public void redirigir() {
         //Se trata de un contador simple si se termina el tiempo se acaba el juego
@@ -159,12 +206,7 @@ public class MainJuego extends AppCompatActivity {
             }
 
             public void onFinish() {
-                if(hasGanado){
-                    karma=0;
-                    Intent i=new Intent(MainJuego.this,PantallaVictoria.class);
-                    i.putExtra("Puntuacion",puntuacion);
-                    startActivity(i);
-                }
+
 
             }
         }.start();

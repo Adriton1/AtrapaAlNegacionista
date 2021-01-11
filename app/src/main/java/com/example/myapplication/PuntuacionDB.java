@@ -1,15 +1,15 @@
 package com.example.myapplication;
 
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.ArrayList;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
+class ParPuntuacion{
+    public String nombre;
+    public int puntos;
+}
 public class PuntuacionDB {
     private int puntuacionReciente;
+    private ArrayList<ParPuntuacion> listaPuntuacionesMejores;
 
     public int getPuntuacionReciente() {
         return puntuacionReciente;
@@ -19,4 +19,11 @@ public class PuntuacionDB {
         this.puntuacionReciente = puntuacionReciente;
     }
 
+    public ArrayList<ParPuntuacion> getListaPuntuacionesMejores() {
+        return listaPuntuacionesMejores;
+    }
+
+    public void setListaPuntuacionesMejores(ArrayList<ParPuntuacion> listaPuntuacionesMejores) {
+        this.listaPuntuacionesMejores = listaPuntuacionesMejores;
+    }
 }

@@ -1,28 +1,24 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Environment;
-import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.json.*;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class MainJuego extends AppCompatActivity {
@@ -42,7 +38,7 @@ public class MainJuego extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantallajuego);
         RandomizePeople();
-
+        puntuacion=0;
 
         if (savedInstanceState !=null){
             tiempRest=savedInstanceState.getLong("segundos");
@@ -189,7 +185,6 @@ public class MainJuego extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        puntuacion=0;
 
     }
     private void deserializarPuntuacion(){

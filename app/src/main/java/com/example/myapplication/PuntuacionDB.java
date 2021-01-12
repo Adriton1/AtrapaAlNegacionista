@@ -8,14 +8,14 @@ class ParPuntuacion{
     public int puntos;
 }
 public class PuntuacionDB {
-    private int puntuacionReciente;
+    private String puntuacionReciente;
     private ArrayList<ParPuntuacion> listaPuntuacionesMejores;
 
-    public int getPuntuacionReciente() {
+    public String getPuntuacionReciente() {
         return puntuacionReciente;
     }
 
-    public void setPuntuacionReciente(int puntuacionReciente) {
+    public void setPuntuacionReciente(String puntuacionReciente) {
         this.puntuacionReciente = puntuacionReciente;
     }
 

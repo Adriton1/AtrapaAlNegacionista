@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -25,26 +27,30 @@ public class PantallaVictoria extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_victoria);
         volver=(Button) findViewById(R.id.volver);
-
+        TextView view = (TextView) findViewById(R.id.TimeOutView);
         Context context=getApplicationContext();
         String fileName="json.txt";
-        /*try {
-            JSONObject obj= new JSONObject(getJSONLine(context,fileName));
-            PuntuacionDB puntuacionDB= new PuntuacionDB();
-            puntuacionDB.setPuntuacionReciente(obj.getInt("puntuacionReciente"));
-            puntuacionFinal=puntuacionDB.getPuntuacionReciente();
-
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }*/
-        TextView view = (TextView) findViewById(R.id.TimeOutView);
         try {
-            view.setText(getJSONLine(context,fileName));
+            JSONObject obj= new JSONObject(getJSONLine(context,fileName));
+            ChangePunct(obj,view);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return;
         } catch (IOException e) {
             e.printStackTrace();
+            return;
+        }
+
+    }
+    public void ChangePunct(JSONObject object, TextView thetext){
+        try {
+            puntuacionFinal= Integer.parseInt(object.getString("puntuacionReciente"));
+            thetext.setText(puntuacionFinal);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return;
         }
     }
-    //TODAVÍA NO FUNCIONA
     public String getJSONLine(Context context, String name) throws IOException {
         File f = new File(context.getFilesDir(),name);
         FileReader fis= new FileReader(f);

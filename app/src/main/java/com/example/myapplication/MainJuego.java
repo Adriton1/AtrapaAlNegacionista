@@ -168,26 +168,23 @@ public class MainJuego extends AppCompatActivity {
     }
     public void serializarPuntuacion() throws JSONException, IOException {
         PuntuacionDB lasPuntuaciones=new PuntuacionDB();
-        lasPuntuaciones.setPuntuacionReciente(puntuacion);
-        File file=new File(getFilesDir(),"Mi carpeta");
+        lasPuntuaciones.setPuntuacionReciente(String.valueOf(puntuacion));
+        /*File file=new File(getFilesDir(),"Mi carpeta");
         if(!file.exists()){
             file.mkdir();
-        }
-        File testFile= new File(file,"json.txt");
+        }*/
+        File testFile= new File(getFilesDir(),"json.txt");
 
         try {
             FileWriter writer= new FileWriter(testFile);
             JSONObject obj= new JSONObject();
-            obj.put("puntReciente",lasPuntuaciones.getPuntuacionReciente());
+            obj.put("puntuacionReciente",lasPuntuaciones.getPuntuacionReciente());
             writer.write(obj.toString());
             writer.flush();
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-    }
-    private void deserializarPuntuacion(){
 
     }
     public void redirigir() {

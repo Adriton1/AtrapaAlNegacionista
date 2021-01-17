@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+
+
 public class MainJuego extends AppCompatActivity {
     TextView contador;
     boolean hasGanado=false;
@@ -87,6 +89,7 @@ public class MainJuego extends AppCompatActivity {
         outState.putInt("penalizacionSpam",karma);
         outState.putInt("puntuacion",puntuacion);
     }
+
 
     public void onClick(View view) throws JSONException, IOException {
         int miID=view.getId();
@@ -168,23 +171,20 @@ public class MainJuego extends AppCompatActivity {
     }
     public void serializarPuntuacion() throws JSONException, IOException {
         PuntuacionDB lasPuntuaciones=new PuntuacionDB();
-        lasPuntuaciones.setPuntuacionReciente(String.valueOf(puntuacion));
-        /*File file=new File(getFilesDir(),"Mi carpeta");
-        if(!file.exists()){
-            file.mkdir();
-        }*/
+        lasPuntuaciones.setPuntuacionReciente(puntuacion);
         File testFile= new File(getFilesDir(),"json.txt");
-
         try {
             FileWriter writer= new FileWriter(testFile);
-            JSONObject obj= new JSONObject();
-            obj.put("puntuacionReciente",lasPuntuaciones.getPuntuacionReciente());
-            writer.write(obj.toString());
+            JSONObject jo = new JSONObject();
+            jo.put("puntuacionReciente",lasPuntuaciones.getPuntuacionReciente());
+            writer.write(jo.toString());
             writer.flush();
             writer.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
     public void redirigir() {

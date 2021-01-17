@@ -3,19 +3,37 @@ package com.example.myapplication;
 
 import java.util.ArrayList;
 
-class ParPuntuacion{
-    public String nombre;
-    public int puntos;
+
+class ParPuntuacion implements Comparable{
+    private int puntos;
+
+    public ParPuntuacion(int puntos){
+        this.puntos=puntos;
+    }
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        int comparePts=((ParPuntuacion)o).getPuntos();
+        return 1-(this.puntos-comparePts);
+    }
 }
+
 public class PuntuacionDB {
-    private String puntuacionReciente;
+    private int puntuacionReciente;
     private ArrayList<ParPuntuacion> listaPuntuacionesMejores;
 
-    public String getPuntuacionReciente() {
+    public int getPuntuacionReciente() {
         return puntuacionReciente;
     }
 
-    public void setPuntuacionReciente(String puntuacionReciente) {
+    public void setPuntuacionReciente(int puntuacionReciente) {
         this.puntuacionReciente = puntuacionReciente;
     }
 

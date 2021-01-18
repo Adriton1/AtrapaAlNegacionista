@@ -31,8 +31,8 @@ public class PantallaVictoria extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        volver=(Button) findViewById(R.id.button4);
         setContentView(R.layout.activity_pantalla_victoria);
+        volver=(Button) findViewById(R.id.button4);
 
         puntuacionesTop.add((TextView) findViewById(R.id.t1));
         puntuacionesTop.add((TextView) findViewById(R.id.t2));
@@ -66,9 +66,19 @@ public class PantallaVictoria extends AppCompatActivity {
 
         }
         Collections.sort(punts);
-        for(int j=0;j<punts.size();j++){
-            puntuacionesTop.get(j).setText(String.valueOf(punts.get(j).getPuntos()));
+        int size=punts.size();
+        if(size>=5){
+            for(int j=0;j<5;j++){
+                puntuacionesTop.get(j).setText(String.valueOf(punts.get(j).getPuntos()));
+            }
         }
+        else{
+            for(int j=0;j<punts.size();j++){
+                puntuacionesTop.get(j).setText(String.valueOf(punts.get(j).getPuntos()));
+            }
+        }
+
+
     }
     public void ChangePunct(JSONObject object, TextView thetext) {
         try {
@@ -98,7 +108,7 @@ public class PantallaVictoria extends AppCompatActivity {
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PantallaVictoria.this, MainActivity.class));
+                finishAffinity();
             }
         });
     }
